@@ -9,7 +9,7 @@ import {Crib} from "../crib";
 export class CribsService {
 
   public newCribSubject = new Subject<any>();
-  public cribValue=new Subject<number>();
+  public cribValue=new Subject<Crib>();
   cribListing:Array<Crib>;
   constructor(private http: Http) { }
 
@@ -26,12 +26,12 @@ export class CribsService {
     this.newCribSubject.next(data);
   }
 
-  setCribDetail(cribId)
+  setCribDetail(crib)
   {
-    this.cribValue.next(cribId);
+    this.cribValue.next(crib);
   }
 
-  getCribDetail(cribId)
+  /*getCribDetail(cribId)
   {
      for(var i = 0;i<this.cribListing.length;i++)
      {
@@ -40,5 +40,5 @@ export class CribsService {
      return this.cribListing[i];
      }
      }
-  }
+  }*/
 }
