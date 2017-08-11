@@ -21,9 +21,19 @@ export class ShoppingComponent implements OnInit {
     this.cr.cribValue.subscribe(
       data=>
       {
-        this.cribInCarts.push( this.cr.getCribDetail(data));
+        this.cribInCarts.push(data);
+
+      /*  this.cribInCarts.push( this.cr.getCribDetail(data));*/
       }
     );
+
+  }
+
+
+  deleteItem(data)
+  {
+    this.cribInCarts.splice(this.cribInCarts.indexOf(data),1);
+
   }
 }
 
