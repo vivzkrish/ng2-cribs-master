@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>My Cart</h4>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Item</th>
+        <th>Quantity</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of cribInCarts">
+        <td> <b>Item :</b>
+          {{c.type}}
+          {{c.price|currency}}</td>
+        <td>{{quantity}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

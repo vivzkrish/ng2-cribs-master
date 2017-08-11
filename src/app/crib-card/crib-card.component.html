@@ -1,0 +1,71 @@
+<div class="thumbnail">
+    <img src="assets/images/{{ cribObj.image }}.jpg" alt="crib thumbnail">
+
+  <div class="caption">
+    <div *ngIf="!cribObj.showDetails">
+      <h4>
+        <span class="label label-primary">
+          {{ cribObj.type }}
+        </span>
+      </h4>
+      <h3>
+        <i class="glyphicon glyphicon-tag"></i>
+          {{ cribObj.price | currency:'USD':true }}
+      </h3>
+      <h4>
+        <i class="glyphicon glyphicon-home"></i>
+          {{ cribObj.address }}
+      </h4>
+
+      <hr>
+
+      <button
+        class="btn btn-sm btn-success"
+        *ngIf="!cribObj.showDetails"
+        (click)="cribObj.showDetails = !cribObj.showDetails">
+        Details
+      </button>
+      <button
+        class="btn btn-sm btn-success"
+        (click)="addToCart(cribObj.id)">
+        Add to Cart
+      </button>
+
+
+    </div>
+
+    <div *ngIf="cribObj.showDetails">
+      <div class="details">
+        <h4>
+          <span class="label label-primary">
+            Beds: {{ cribObj.bedrooms }}
+          </span>
+          <span class="label label-primary">
+            Baths: {{ cribObj.bathrooms }}
+          </span>
+          <span class="label label-primary">
+            SqFt: {{ cribObj.area }}
+          </span>
+        </h4>
+
+        <p>{{ cribObj.description }}</p>
+
+        <hr>
+
+        <button
+          class="btn btn-sm btn-danger"
+          (click)="cribObj.showDetails = !cribObj.showDetails">
+          Close
+        </button>
+
+        <button
+          class="btn btn-sm btn-danger"
+          (click)="cribObj.showDetails = !cribObj.showDetails">
+          Close
+        </button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
